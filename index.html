@@ -3,15 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Editor Real Time</title>
+    <title>Aeropuerto</title>
+    <style>
+        .gate-info {
+            border: 1px solid black;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h3>Real Time Editor</h3>
-    <div>
-        <textarea rows="30" cols="50"
-        id="editor" style="background-color: aqua; color: black" placeholder="Edite su texto...."></textarea>
+    <h1>Aeropuerto</h1>
+    <div id="gate-container">
+        <div class="gate-info" id="gate-1">
+            <h2>Puerta de Embarque: Gate 1</h2>
+            <p>Número de Vuelo: <span id="flight-number-1">AV1234</span></p>
+            <p>Destino: <span id="destination-1">CTG</span></p>
+            <p>Aerolínea: <span id="airline-1">AVIANCA</span></p>
+            <p>Hora de Salida: <span id="departure-time-1">11:00</span></p>
+
+            <div>
+                <h3>Actualizar Información de Puerta</h3>
+                <div class="form-group">
+                    <label for="flight-number-1">Número de Vuelo:</label>
+                    <input type="text" id="flight-number-input-1" placeholder="Ingrese el número de vuelo">
+                </div>
+                <div class="form-group">
+                    <label for="destination-1">Destino:</label>
+                    <input type="text" id="destination-input-1" placeholder="Ingrese el destino">
+                </div>
+                <div class="form-group">
+                    <label for="airline-1">Aerolínea:</label>
+                    <input type="text" id="airline-input-1" placeholder="Ingrese la aerolínea">
+                </div>
+                <div class="form-group">
+                    <label for="departure-time-1">Hora de Salida:</label>
+                    <input type="text" id="departure-time-input-1" placeholder="Ingrese la hora de salida">
+                </div>
+                <button class="update-btn" data-gate="1">Actualizar</button>
+            </div>
+        </div>
+        <div class="gate-info" id="gate-2">
+            <h2>Puerta de Embarque: Gate 2</h2>
+            <p>Número de Vuelo: <span id="flight-number-2">WG998</span></p>
+            <p>Destino: <span id="destination-2">BOG</span></p>
+            <p>Aerolínea: <span id="airline-2">WINGO</span></p>
+            <p>Hora de Salida: <span id="departure-time-2">09:45</span></p>
+
+            <div>
+                <h3>Actualizar Información de Puerta</h3>
+                <div class="form-group">
+                    <label for="flight-number-2">Número de Vuelo:</label>
+                    <input type="text" id="flight-number-input-2" placeholder="Ingrese el número de vuelo">
+                </div>
+                <div class="form-group">
+                    <label for="destination-2">Destino:</label>
+                    <input type="text" id="destination-input-2" placeholder="Ingrese el destino">
+                </div>
+                <div class="form-group">
+                    <label for="airline-2">Aerolínea:</label>
+                    <input type="text" id="airline-input-2" placeholder="Ingrese la aerolínea">
+                </div>
+                <div class="form-group">
+                    <label for="departure-time-2">Hora de Salida:</label>
+                    <input type="text" id="departure-time-input-2" placeholder="Ingrese la hora de salida">
+                </div>
+                <button class="update-btn" data-gate="2">Actualizar</button>
+            </div>
+        </div>
     </div>
+
+    <script src="./node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script src="./client.js"></script>
 </body>
-<script src="./node_modules/socket.io-client/dist/socket.io.js"></script>
-<script src="./client.js"></script>
 </html>
