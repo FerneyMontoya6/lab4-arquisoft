@@ -11,10 +11,10 @@ io.on('connection', (socket) => {
     log('Cliente conectado');
     
     // Manejar evento de actualización de información de puerta
-    socket.on('update-gate-info', (data) => {
+    socket.on('message', (data) => {
         log('Datos recibidos:', data);
         // Emitir la actualización a todos los clientes conectados
-        socket.broadcast.emit('gate-info', data);
+        socket.broadcast.emit('message', data);
     });
     
     // Manejar desconexión del cliente
